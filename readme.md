@@ -15,7 +15,7 @@ and clicking **Download Zip**
 2. Create a new folder (name does not matter) in your local `Mods` folder. On Windows,
 the default location for this folder is `C:\Program Files (x86)\Steam\SteamApps\common\RimWorld\Mods`
 3. Unzip the zip file into that folder
-4. Run the game or use your mod manager of choice and enable the "Example Ranged Weapon" mod.
+4. Run the game or use your mod manager of choice and enable the "Example Plant" mod.
 
 # Links
 

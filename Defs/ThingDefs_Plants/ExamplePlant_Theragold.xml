@@ -153,10 +153,12 @@
                 <ColdBog>0.05</ColdBog>
 
                 <!-- These are examples of optional compatibility entries for modded biomes -->
+
                 <!-- This is the "feralisk-infested jungle" biome from Alpha Biomes by Sarg -->
                 <AB_FeraliskInfestedJungle MayRequire="sarg.alphabiomes">0.05</AB_FeraliskInfestedJungle>
                 <!-- This is the "idyllic meadow" biome from Alpha Biomes by Sarg -->
                 <AB_IdyllicMeadows MayRequire="sarg.alphabiomes">0.05</AB_IdyllicMeadows>
+
                 <!-- This is the "alpine meadow" biome from More Vanilla Biomes by Zylleon -->
                 <ZBiome_AlpineMeadow MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_AlpineMeadow>
                 <!-- This is the "cloud forest" biome from More Vanilla Biomes by Zylleon -->
@@ -167,6 +169,23 @@
                 <ZBiome_Grasslands MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Grasslands>
                 <!-- This is the "marsh" biome from More Vanilla Biomes by Zylleon -->
                 <ZBiome_Marsh MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Marsh>
+
+                <!-- This is the "boreal island" biome from Biomes! Islands by the Biomes! team -->
+                <BiomesIslands_BorealIsland MayRequire="BiomesTeam.BiomesIslands">0.16</BiomesIslands_BorealIsland>
+                <!-- This is the "temperate island" biome from Biomes! Islands by the Biomes! team -->
+                <BiomesIslands_TemperateIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TemperateIsland>
+                <!-- This is the "temperate archipelago" biome from Biomes! Islands by the Biomes! team -->
+                <BiomesIslands_TemperateArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TemperateArchipelago>
+                <!-- This is the "tropical island" biome from Biomes! Islands by the Biomes! team -->
+                <BiomesIslands_TropicalIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TropicalIsland>
+                <!-- This is the "tropical archipelago" biome from Biomes! Islands by the Biomes! team -->
+                <BiomesIslands_TropicalArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TropicalArchipelago>
+                <!-- This is the "tundra island" biome from Biomes! Islands by the Biomes! team -->
+                <BiomesIslands_TundraIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraIsland>
+                <!-- This is the "tundra archipelago" biome from Biomes! Islands by the Biomes! team -->
+                <BiomesIslands_TundraArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraArchipelago>
+                <!-- This is the "chromatic oasis" biome from Biomes! Oasis by the Biomes! team -->
+                <BMT_ChromaticOasis MayRequire="BiomesTeam.Oasis">0.2</BMT_ChromaticOasis>
 
             </wildBiomes>
         </plant>

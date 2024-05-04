@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 
-	<!-- This is the internal identifier for your mod. -->
-	<!-- It is recommended that you make it unique to as to avoid potential collisions with other authors; -->
-	<!--     if Rimworld detects multiple mods with the same packageId then it will refuse to load all of them. -->
-    <packageId>AuthorName.ExamplePlant</packageId>
-	
-	<!-- This is both the displayed name of your mod as well as the name used for patch targeting. -->
-    <name>Example Plant</name>
-	
-	<!-- Your name goes here. -->
-    <author>AuthorName</author>
+  <!-- This is the internal identifier for your mod. -->
+  <!-- It is recommended that you make it unique to as to avoid potential collisions with other authors; -->
+  <!--   if Rimworld detects multiple mods with the same packageId then it will refuse to load all of them. -->
+  <packageId>AuthorName.ExamplePlant</packageId>
 
-    <!-- A version number for your own tracking -->
-    <!-- See wiki About.xml guide for concerns regarding this field for RimWorld versions prior to 1.4 -->
-    <modVersion>1.0</modVersion>
-	
-	<!-- These are the RimWorld game versions that your mod supports. -->
-	<!-- It is recommended that you only list versions that you have explicitly tested to ensure they work, -->
-	<!-- as even basic XML options can change between major versions of the game. -->
-    <supportedVersions>
-        <li>1.4</li>
-    </supportedVersions>
-	
-	<!-- This is the description of your mod shown in both the vanilla mod manager as well as modded managers. -->
-    <description>This is an example plant mod made for the RimWorld Wiki.</description>
-	
+  <!-- This is both the displayed name of your mod as well as the name used for patch targeting. -->
+  <name>Example Plant</name>
+
+  <!-- Your name goes here. -->
+  <author>AuthorName</author>
+
+  <!-- A version number for your own tracking -->
+  <!-- See wiki About.xml guide for concerns regarding this field for RimWorld versions prior to 1.4 -->
+  <modVersion>1.0</modVersion>
+
+  <!-- These are the RimWorld game versions that your mod supports. -->
+  <!-- It is recommended that you only list versions that you have explicitly tested to ensure they work, -->
+  <!-- as even basic XML options can change between major versions of the game. -->
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+
+  <!-- This is the description of your mod shown in both the vanilla mod manager as well as modded managers. -->
+  <description>This is an example plant mod made for the RimWorld Wiki.</description>
+
 </ModMetaData>

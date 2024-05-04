@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!-- Example recipe: make herbal medicine from theragold flowers -->
-    <RecipeDef>
+  <!-- Example recipe: make herbal medicine from theragold flowers -->
+  <RecipeDef>
 
-        <!-- defNames must be unique across all mods -->
-        <!-- It's generally recommended that you prefix it with your mod name to prevent mod collisions -->
-        <defName>ExamplePlant_Make_MedicineHerbal</defName>
+    <!-- defNames must be unique across all mods -->
+    <!-- It's generally recommended that you prefix it with your mod name to prevent mod collisions -->
+    <defName>ExamplePlant_Make_MedicineHerbal</defName>
 
-        <!-- This is the display name of this recipe. It should be lowercase unless it's a proper name -->
-        <!-- Labels will get automatically capitalized by RimWorld's grammar resolver if necessary -->
-        <label>make herbal medicine from theragold</label>
+    <!-- This is the display name of this recipe. It should be lowercase unless it's a proper name -->
+    <!-- Labels will get automatically capitalized by RimWorld's grammar resolver if necessary -->
+    <label>make herbal medicine from theragold</label>
 
-        <!-- The full description of this item. It is seen by players when inspecting the full stat card -->
-        <description>Make herbal medicine from theragold flowers.</description>
+    <!-- The full description of this item. It is seen by players when inspecting the full stat card -->
+    <description>Make herbal medicine from theragold flowers.</description>
 
-        <!-- The description displayed in a pawn's inspect window when using this recipe -->
-        <jobString>Making herbal medicine from theragold flowers.</jobString>
+    <!-- The description displayed in a pawn's inspect window when using this recipe -->
+    <jobString>Making herbal medicine from theragold flowers.</jobString>
 
-        <!-- Specifies an EffecterDef for visual effects when this recipe is being used at a workbench -->
-        <effectWorking>Cook</effectWorking>
+    <!-- Specifies an EffecterDef for visual effects when this recipe is being used at a workbench -->
+    <effectWorking>Cook</effectWorking>
 
-        <!-- Specifies a SoundDef for sustained audio when this recipe is being used at a workbench -->
-        <soundWorking>Recipe_CookMeal</soundWorking>
+    <!-- Specifies a SoundDef for sustained audio when this recipe is being used at a workbench -->
+    <soundWorking>Recipe_CookMeal</soundWorking>
 
-        <!-- Specifies the primary skill for this recipe -->
-        <!-- This is used to both restrict pawns and grant experience points -->
-        <workSkill>Cooking</workSkill>
+    <!-- Specifies the primary skill for this recipe -->
+    <!-- This is used to both restrict pawns and grant experience points -->
+    <workSkill>Cooking</workSkill>
 
-        <!-- The amount of work it takes to complete this recipe -->
-        <!-- Pawns with 100% speed will perform 1 work per tick, so 300 work is approximately 5s -->
-        <workAmount>300</workAmount>
+    <!-- The amount of work it takes to complete this recipe -->
+    <!-- Pawns with 100% speed will perform 1 work per tick, so 300 work is approximately 5s -->
+    <workAmount>300</workAmount>
 
-        <!-- Specifies the StatDef that should be used to determine work speed -->
-        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <!-- Specifies the StatDef that should be used to determine work speed -->
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 
-        <!-- Specifies the workbenches that this recipe should appear on -->
-        <recipeUsers>
-            <li>CraftingSpot</li>
-            <li>DrugLab</li>
-        </recipeUsers>
+    <!-- Specifies the workbenches that this recipe should appear on -->
+    <recipeUsers>
+      <li>CraftingSpot</li>
+      <li>DrugLab</li>
+    </recipeUsers>
 
-        <!-- Specifies the ingredients required to use this recipe -->
-        <ingredients>
-            <li>
-                <filter>
-                    <thingDefs>
-                        <li>ExamplePlant_RawTheragold</li>
-                    </thingDefs>
-                </filter>
-                <count>12</count>
-            </li>
-        </ingredients>
+    <!-- Specifies the ingredients required to use this recipe -->
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ExamplePlant_RawTheragold</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+    </ingredients>
 
-        <!-- Specifies all allowed ingredients available in the bill filter -->
-        <!-- For a simple single-ingredient recipe such as this one, this will be identical to the ingredients -->
-        <fixedIngredientFilter>
-            <thingDefs>
-                <li>ExamplePlant_RawTheragold</li>
-            </thingDefs>
-        </fixedIngredientFilter>
+    <!-- Specifies all allowed ingredients available in the bill filter -->
+    <!-- For a simple single-ingredient recipe such as this one, this will be identical to the ingredients -->
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ExamplePlant_RawTheragold</li>
+      </thingDefs>
+    </fixedIngredientFilter>
 
-        <!-- Specifies the exact products that will be generated when this recipe is finished -->
-        <products>
-            <MedicineHerbal>1</MedicineHerbal>
-        </products>
+    <!-- Specifies the exact products that will be generated when this recipe is finished -->
+    <products>
+      <MedicineHerbal>1</MedicineHerbal>
+    </products>
 
-        <!-- Specifies the skill required to use this recipe -->
-        <skillRequirements>
-            <Crafting>2</Crafting>
-        </skillRequirements>
+    <!-- Specifies the skill required to use this recipe -->
+    <skillRequirements>
+      <Crafting>2</Crafting>
+    </skillRequirements>
 
-    </RecipeDef>
+  </RecipeDef>
 
 </Defs>

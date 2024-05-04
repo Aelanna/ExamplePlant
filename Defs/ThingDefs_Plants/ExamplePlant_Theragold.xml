@@ -1,195 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!-- Abstract base: TheragoldBase -->
-    <!-- The data from this node will be inherited by our two "concrete" Defs -->
-    <ThingDef ParentName="PlantBase" Name="TheragoldBase" Abstract="True">
+  <!-- Abstract base: TheragoldBase -->
+  <!-- The data from this node will be inherited by our two "concrete" Defs -->
+  <ThingDef ParentName="PlantBase" Name="TheragoldBase" Abstract="True">
 
-        <!-- Stat bases are copied from vanilla healroot -->
-        <statBases>
-            <MaxHitPoints>60</MaxHitPoints>
-            <Nutrition>0.2</Nutrition>
-        </statBases>
+    <!-- Stat bases are copied from vanilla healroot -->
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
 
-        <!-- Sets the graphic data for this ThingDef -->
-        <graphicData>
-            <!-- Determines the texture for fully grown plants -->
-            <texPath>ExampleMod/Theragold</texPath>
-            <!-- Graphic_Random random selects a graphic from a folder -->
-            <graphicClass>Graphic_Random</graphicClass>
-        </graphicData>
+    <!-- Sets the graphic data for this ThingDef -->
+    <graphicData>
+      <!-- Determines the texture for fully grown plants -->
+      <texPath>ExampleMod/Theragold</texPath>
+      <!-- Graphic_Random random selects a graphic from a folder -->
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
 
-        <!-- Determines whether this Thing can be selected -->
-        <!-- Many vanilla wild plants such as grass and bushes are not selectable as they cannot be harvested
-             for resources and you don't want them cluttering up the UI -->
-        <selectable>true</selectable>
+    <!-- Determines whether this Thing can be selected -->
+    <!-- Many vanilla wild plants such as grass and bushes are not selectable as they cannot be harvested
+         for resources and you don't want them cluttering up the UI -->
+    <selectable>true</selectable>
 
-        <!-- A higher path cost slows down movement of pawns moving through the same tile as this Thing -->
-        <pathCost>14</pathCost>
+    <!-- A higher path cost slows down movement of pawns moving through the same tile as this Thing -->
+    <pathCost>14</pathCost>
 
-        <!-- Having an ingestible tag denotes this Thing as ingestible, even if it's only using default values -->
-        <ingestible />
+    <!-- Having an ingestible tag denotes this Thing as ingestible, even if it's only using default values -->
+    <ingestible/>
 
-        <!-- PlantProperties sets various data relevant to plants -->
-        <plant>
-            <!-- Sets the texture used by this plant when it's not mature yet -->
-            <!-- A plant is mature when its growth reaches its harvestMinGrowth value, which is 0.65 by default -->
-            <immatureGraphicPath>ExampleMod/ImmatureTheragold</immatureGraphicPath>
+    <!-- PlantProperties sets various data relevant to plants -->
+    <plant>
 
-            <!-- Sets the number of days it takes for this plant to grow to maturity -->
-            <!-- Note that this is actually the amount of time in days it takes to maturity, and since plants
-                 rest at night, the actual number of in-game days it takes to grow to maturity is higher than listed -->
-            <growDays>8</growDays>
+      <!-- Sets the texture used by this plant when it's not mature yet -->
+      <!-- A plant is mature when its growth reaches its harvestMinGrowth value, which is 0.65 by default -->
+      <immatureGraphicPath>ExampleMod/ImmatureTheragold</immatureGraphicPath>
 
-            <!-- When set to false, plants will simply hibernate instead of dying outright when it gets too cold -->
-            <dieIfLeafless>false</dieIfLeafless>
+      <!-- Sets the number of days it takes for this plant to grow to maturity -->
+      <!-- Note that this is actually the amount of time in days it takes to maturity, and since plants
+           rest at night, the actual number of in-game days it takes to grow to maturity is higher than listed -->
+      <growDays>8</growDays>
 
-            <!-- The amount of work it takes to harvest this plant -->
-            <!-- Pawns with 100% plant harvest speed will perform 1 work per tick, so 400 work is approximately 6.7s -->
-            <harvestWork>400</harvestWork>
+      <!-- When set to false, plants will simply hibernate instead of dying outright when it gets too cold -->
+      <dieIfLeafless>false</dieIfLeafless>
 
-            <!-- harvestTag is used by various designators to target Things -->
-            <!-- "Standard" makes this plant targetable by the Harvest designator -->
-            <harvestTag>Standard</harvestTag>
+      <!-- The amount of work it takes to harvest this plant -->
+      <!-- Pawns with 100% plant harvest speed will perform 1 work per tick, so 400 work is approximately 6.7s -->
+      <harvestWork>400</harvestWork>
 
-            <!-- Defines the ThingDef that is generated when this plant is harvested -->
-            <harvestedThingDef>ExamplePlant_RawTheragold</harvestedThingDef>
+      <!-- harvestTag is used by various designators to target Things -->
+      <!-- "Standard" makes this plant targetable by the Harvest designator -->
+      <harvestTag>Standard</harvestTag>
 
-            <!-- Defines the base amount of the harvested ThingDef that is generated when this plant is harvested -->
-            <!-- The final value is modified by the harvester's plant yield stat -->
-            <harvestYield>8</harvestYield>
+      <!-- Defines the ThingDef that is generated when this plant is harvested -->
+      <harvestedThingDef>ExamplePlant_RawTheragold</harvestedThingDef>
 
-            <!-- Defines the maximum amount of visual sway this plant can have -->
-            <topWindExposure>0.1</topWindExposure>
+      <!-- Defines the base amount of the harvested ThingDef that is generated when this plant is harvested -->
+      <!-- The final value is modified by the harvester's plant yield stat -->
+      <harvestYield>8</harvestYield>
 
-            <!-- Defines the size variation of this plant based on its growth value -->
-            <visualSizeRange>0.3~1.0</visualSizeRange>
+      <!-- Defines the maximum amount of visual sway this plant can have -->
+      <topWindExposure>0.1</topWindExposure>
 
-            <!-- Defines an order value used by the wild plant spawner to prioritize generation -->
-            <wildOrder>2</wildOrder>
+      <!-- Defines the size variation of this plant based on its growth value -->
+      <visualSizeRange>0.3~1.0</visualSizeRange>
 
-            <!-- Defines whether this plant can be designated as automatically removed -->
-            <!-- Setting this to false means that it won't be automatically destroyed when in a pen -->
-            <allowAutoCut>false</allowAutoCut>
-        </plant>
-    </ThingDef>
+      <!-- Defines an order value used by the wild plant spawner to prioritize generation -->
+      <wildOrder>2</wildOrder>
 
-    <!-- Cultivated theragold -->
-    <!-- This ThingDef will inherit all fields from the abstract base TheragoldBase -->
-    <ThingDef ParentName="TheragoldBase">
+      <!-- Defines whether this plant can be designated as automatically removed -->
+      <!-- Setting this to false means that it won't be automatically destroyed when in a pen -->
+      <allowAutoCut>false</allowAutoCut>
+    </plant>
+  </ThingDef>
 
-        <!-- defNames must be unique across all mods -->
-        <!-- It's generally recommended that you prefix it with your mod name to prevent mod collisions -->
-        <defName>ExamplePlant_Theragold</defName>
+  <!-- Cultivated theragold -->
+  <!-- This ThingDef will inherit all fields from the abstract base TheragoldBase -->
+  <ThingDef ParentName="TheragoldBase">
 
-        <!-- This is the display name of the plant. It should be lowercase unless it's a proper name -->
-        <!-- Labels will get automatically capitalized by RimWorld's grammar resolver if necessary -->
-        <label>theragold</label>
+    <!-- defNames must be unique across all mods -->
+    <!-- It's generally recommended that you prefix it with your mod name to prevent mod collisions -->
+    <defName>ExamplePlant_Theragold</defName>
 
-        <!-- The full description of this plant. It is seen by players when inspecting the full stat card -->
-        <description>Engineered by a long-forgotten glitterworld, theragolds are a genetically modified cultivar of marigolds intended for seeding on terraformed garden worlds. While not particularly efficient at either, theragolds can be eaten for nutrition or processed into various medicinal products. Its hardiness and relative ease of cultivation makes it a valuable secondary crop for frontier colonies.\n\nThis secondary cultivar of theragold is faster-growing but less hardy, and intended for cultivation by frontier colonies.</description>
+    <!-- This is the display name of the plant. It should be lowercase unless it's a proper name -->
+    <!-- Labels will get automatically capitalized by RimWorld's grammar resolver if necessary -->
+    <label>theragold</label>
 
-        <!-- Fields specified here will override TheragoldBase's values -->
-        <plant>
-            <!-- Cultivated theragold grows faster than wild theragold -->
-            <growDays>5</growDays>
+    <!-- The full description of this plant. It is seen by players when inspecting the full stat card -->
+    <description>Engineered by a long-forgotten glitterworld, theragolds are a genetically modified cultivar of marigolds intended for seeding on terraformed garden worlds. While not particularly efficient at either, theragolds can be eaten for nutrition or processed into various medicinal products. Its hardiness and relative ease of cultivation makes it a valuable secondary crop for frontier colonies.\n\nThis secondary cultivar of theragold is faster-growing but less hardy, and intended for cultivation by frontier colonies.</description>
 
-            <!-- Theragold takes slightly longer to sow than vanilla crop plants -->
-            <sowWork>250</sowWork>
+    <!-- Fields specified here will override TheragoldBase's values -->
+    <plant>
 
-            <!-- The minimum Plants skill required to sow this plant -->
-            <sowMinSkill>6</sowMinSkill>
+      <!-- Cultivated theragold grows faster than wild theragold -->
+      <growDays>5</growDays>
 
-            <!-- The types of places this plant can be sown. Ground, Hydroponic, and Decorative are vanilla options -->
-            <sowTags>
-                <li>Ground</li>
-                <li>Hydroponic</li>
-            </sowTags>
+      <!-- Theragold takes slightly longer to sow than vanilla crop plants -->
+      <sowWork>250</sowWork>
 
-            <!-- Determines the display priority of this plant in lists -->
-            <!-- Options in descending priority are: Food, Health, Beauty, Misc -->
-            <purpose>Food</purpose>
-        </plant>
+      <!-- The minimum Plants skill required to sow this plant -->
+      <sowMinSkill>6</sowMinSkill>
 
-    </ThingDef>
+      <!-- The types of places this plant can be sown. Ground, Hydroponic, and Decorative are vanilla options -->
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
 
-    <!-- Wild theragold -->
-    <!-- This ThingDef will inherit all fields from the abstract base TheragoldBase -->
-    <ThingDef ParentName="TheragoldBase">
+      <!-- Determines the display priority of this plant in lists -->
+      <!-- Options in descending priority are: Food, Health, Beauty, Misc -->
+      <purpose>Food</purpose>
+    </plant>
 
-        <!-- defNames must be unique across all mods -->
-        <!-- It's generally recommended that you prefix it with your mod name to prevent mod collisions -->
-        <defName>ExamplePlant_TheragoldWild</defName>
+  </ThingDef>
 
-        <!-- This is the display name of the plant. It should be lowercase unless it's a proper name -->
-        <!-- Labels will get automatically capitalized by RimWorld's grammar resolver if necessary -->
-        <label>wild theragold</label>
+  <!-- Wild theragold -->
+  <!-- This ThingDef will inherit all fields from the abstract base TheragoldBase -->
+  <ThingDef ParentName="TheragoldBase">
 
-        <!-- The full description of this plant. It is seen by players when inspecting the full stat card -->
-        <description>Engineered by a long-forgotten glitterworld, theragolds are a genetically modified cultivar of marigolds intended for seeding on terraformed garden worlds. While not particularly efficient at either, theragolds can be eaten for nutrition or processed into various medicinal products. Its hardiness and relative ease of cultivation makes it a valuable secondary crop for frontier colonies.\n\nThis original cultivar of theragold is hardier but slower-growing than the modified variant intended for human cultivation and can be found growing wild in a variety of biomes.</description>
+    <!-- defNames must be unique across all mods -->
+    <!-- It's generally recommended that you prefix it with your mod name to prevent mod collisions -->
+    <defName>ExamplePlant_TheragoldWild</defName>
 
-        <!-- If set to true, prevents this Thing from being selected when a player band-box selects -->
-        <!-- This is usually set to true for non-harvestable wild plants such as grass, flowers, and bushes -->
-        <neverMultiSelect>false</neverMultiSelect>
+    <!-- This is the display name of the plant. It should be lowercase unless it's a proper name -->
+    <!-- Labels will get automatically capitalized by RimWorld's grammar resolver if necessary -->
+    <label>wild theragold</label>
 
-        <!-- Fields specified here will override TheragoldBase's values -->
-        <plant>
-            <!-- Determines wide of an area a single spawned patch of this plant will spread over -->
-            <wildClusterRadius>4</wildClusterRadius>
+    <!-- The full description of this plant. It is seen by players when inspecting the full stat card -->
+    <description>Engineered by a long-forgotten glitterworld, theragolds are a genetically modified cultivar of marigolds intended for seeding on terraformed garden worlds. While not particularly efficient at either, theragolds can be eaten for nutrition or processed into various medicinal products. Its hardiness and relative ease of cultivation makes it a valuable secondary crop for frontier colonies.\n\nThis original cultivar of theragold is hardier but slower-growing than the modified variant intended for human cultivation and can be found growing wild in a variety of biomes.</description>
 
-            <!-- Determines the biome weight of this plant -->
-            <!-- A higher weight means less of this plant will generate relative to plants with lower weight -->
-            <wildClusterWeight>80</wildClusterWeight>
+    <!-- If set to true, prevents this Thing from being selected when a player band-box selects -->
+    <!-- This is usually set to true for non-harvestable wild plants such as grass, flowers, and bushes -->
+    <neverMultiSelect>false</neverMultiSelect>
 
-            <!-- Sets spawn weights for biomes -->
-            <!-- Vanilla plants are wired up from the biome side, but it is far easier to add new plants this way -->
-            <wildBiomes>
+    <!-- Fields specified here will override TheragoldBase's values -->
+    <plant>
 
-                <!-- These values match the vanilla weights of wild healroot -->
-                <TemperateForest>0.05</TemperateForest>
-                <TemperateSwamp>0.05</TemperateSwamp>
-                <BorealForest>0.16</BorealForest>
-                <Tundra>0.05</Tundra>
-                <ColdBog>0.05</ColdBog>
+      <!-- Determines wide of an area a single spawned patch of this plant will spread over -->
+      <wildClusterRadius>4</wildClusterRadius>
 
-                <!-- These are examples of optional compatibility entries for modded biomes -->
+      <!-- Determines the biome weight of this plant -->
+      <!-- A higher weight means less of this plant will generate relative to plants with lower weight -->
+      <wildClusterWeight>80</wildClusterWeight>
 
-                <!-- This is the "feralisk-infested jungle" biome from Alpha Biomes by Sarg -->
-                <AB_FeraliskInfestedJungle MayRequire="sarg.alphabiomes">0.05</AB_FeraliskInfestedJungle>
-                <!-- This is the "idyllic meadow" biome from Alpha Biomes by Sarg -->
-                <AB_IdyllicMeadows MayRequire="sarg.alphabiomes">0.05</AB_IdyllicMeadows>
+      <!-- Sets spawn weights for biomes -->
+      <!-- Vanilla plants are wired up from the biome side, but it is far easier to add new plants this way -->
+      <wildBiomes>
 
-                <!-- This is the "alpine meadow" biome from More Vanilla Biomes by Zylleon -->
-                <ZBiome_AlpineMeadow MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_AlpineMeadow>
-                <!-- This is the "cloud forest" biome from More Vanilla Biomes by Zylleon -->
-                <ZBiome_CloudForest MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_CloudForest>
-                <!-- This is the "desert oasis" biome from More Vanilla Biomes by Zylleon -->
-                <ZBiome_DesertOasis MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_DesertOasis>
-                <!-- This is the "grasslands" biome from More Vanilla Biomes by Zylleon -->
-                <ZBiome_Grasslands MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Grasslands>
-                <!-- This is the "marsh" biome from More Vanilla Biomes by Zylleon -->
-                <ZBiome_Marsh MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Marsh>
+        <!-- These values match the vanilla weights of wild healroot -->
+        <TemperateForest>0.05</TemperateForest>
+        <TemperateSwamp>0.05</TemperateSwamp>
+        <BorealForest>0.16</BorealForest>
+        <Tundra>0.05</Tundra>
+        <ColdBog>0.05</ColdBog>
 
-                <!-- This is the "boreal island" biome from Biomes! Islands by the Biomes! team -->
-                <BiomesIslands_BorealIsland MayRequire="BiomesTeam.BiomesIslands">0.16</BiomesIslands_BorealIsland>
-                <!-- This is the "temperate island" biome from Biomes! Islands by the Biomes! team -->
-                <BiomesIslands_TemperateIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TemperateIsland>
-                <!-- This is the "temperate archipelago" biome from Biomes! Islands by the Biomes! team -->
-                <BiomesIslands_TemperateArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TemperateArchipelago>
-                <!-- This is the "tropical island" biome from Biomes! Islands by the Biomes! team -->
-                <BiomesIslands_TropicalIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TropicalIsland>
-                <!-- This is the "tropical archipelago" biome from Biomes! Islands by the Biomes! team -->
-                <BiomesIslands_TropicalArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TropicalArchipelago>
-                <!-- This is the "tundra island" biome from Biomes! Islands by the Biomes! team -->
-                <BiomesIslands_TundraIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraIsland>
-                <!-- This is the "tundra archipelago" biome from Biomes! Islands by the Biomes! team -->
-                <BiomesIslands_TundraArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraArchipelago>
-                <!-- This is the "chromatic oasis" biome from Biomes! Oasis by the Biomes! team -->
-                <BMT_ChromaticOasis MayRequire="BiomesTeam.Oasis">0.2</BMT_ChromaticOasis>
+        <!-- These are examples of optional compatibility entries for modded biomes -->
 
-            </wildBiomes>
-        </plant>
+        <!-- This is the "feralisk-infested jungle" biome from Alpha Biomes by Sarg -->
+        <AB_FeraliskInfestedJungle MayRequire="sarg.alphabiomes">0.05</AB_FeraliskInfestedJungle>
+        <!-- This is the "idyllic meadow" biome from Alpha Biomes by Sarg -->
+        <AB_IdyllicMeadows MayRequire="sarg.alphabiomes">0.05</AB_IdyllicMeadows>
 
-    </ThingDef>
+        <!-- This is the "alpine meadow" biome from More Vanilla Biomes by Zylleon -->
+        <ZBiome_AlpineMeadow MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_AlpineMeadow>
+        <!-- This is the "cloud forest" biome from More Vanilla Biomes by Zylleon -->
+        <ZBiome_CloudForest MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_CloudForest>
+        <!-- This is the "desert oasis" biome from More Vanilla Biomes by Zylleon -->
+        <ZBiome_DesertOasis MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_DesertOasis>
+        <!-- This is the "grasslands" biome from More Vanilla Biomes by Zylleon -->
+        <ZBiome_Grasslands MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Grasslands>
+        <!-- This is the "marsh" biome from More Vanilla Biomes by Zylleon -->
+        <ZBiome_Marsh MayRequire="zylle.MoreVanillaBiomes">0.05</ZBiome_Marsh>
+
+        <!-- This is the "boreal island" biome from Biomes! Islands by the Biomes! team -->
+        <BiomesIslands_BorealIsland MayRequire="BiomesTeam.BiomesIslands">0.16</BiomesIslands_BorealIsland>
+        <!-- This is the "temperate island" biome from Biomes! Islands by the Biomes! team -->
+        <BiomesIslands_TemperateIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TemperateIsland>
+        <!-- This is the "temperate archipelago" biome from Biomes! Islands by the Biomes! team -->
+        <BiomesIslands_TemperateArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05
+        </BiomesIslands_TemperateArchipelago>
+        <!-- This is the "tropical island" biome from Biomes! Islands by the Biomes! team -->
+        <BiomesIslands_TropicalIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TropicalIsland>
+        <!-- This is the "tropical archipelago" biome from Biomes! Islands by the Biomes! team -->
+        <BiomesIslands_TropicalArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05
+        </BiomesIslands_TropicalArchipelago>
+        <!-- This is the "tundra island" biome from Biomes! Islands by the Biomes! team -->
+        <BiomesIslands_TundraIsland MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraIsland>
+        <!-- This is the "tundra archipelago" biome from Biomes! Islands by the Biomes! team -->
+        <BiomesIslands_TundraArchipelago MayRequire="BiomesTeam.BiomesIslands">0.05</BiomesIslands_TundraArchipelago>
+        <!-- This is the "chromatic oasis" biome from Biomes! Oasis by the Biomes! team -->
+        <BMT_ChromaticOasis MayRequire="BiomesTeam.Oasis">0.2</BMT_ChromaticOasis>
+
+      </wildBiomes>
+    </plant>
+
+  </ThingDef>
 
 </Defs>
